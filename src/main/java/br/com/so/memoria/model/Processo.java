@@ -6,5 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Processo {
+    private int pid;
+    private String nome;
+
 
 }

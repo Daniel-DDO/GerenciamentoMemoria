@@ -3,13 +3,11 @@ package br.com.so.memoria.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Getter
 @Setter
-public class Particao {
+public class Paginacao {
     private double tamanhoMemoFisica;
+    private double tamanhoMemVirtual;
     private UnidadeArmazenamento unidadeArmazenamento;
-    private List<Processo> processos = new ArrayList<>();
+
 }
