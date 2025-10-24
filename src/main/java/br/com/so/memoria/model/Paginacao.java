@@ -1,13 +1,7 @@
-package br.com.so.memoria.model;
-
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
+/*package br.com.so.memoria.model;
 public class Paginacao {
     private double tamanhoMemoFisica;
     private double tamanhoMemVirtual;
     private UnidadeArmazenamento unidadeArmazenamento;
 
-}
+}*/
