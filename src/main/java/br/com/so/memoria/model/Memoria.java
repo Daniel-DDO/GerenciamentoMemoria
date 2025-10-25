@@ -1,8 +1,11 @@
 package br.com.so.memoria.model;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class Memoria {
     private final long tamanhoTotal; 
     private final UnidadeArmazenamento unidade;
@@ -16,7 +19,7 @@ public class Memoria {
         this.memoriaSecundaria = new ArrayList<>();
     }
 
-    public boolean adicionarParticao(long tamanhoParticao) { // Alterado para long
+    public boolean adicionarParticao(long tamanhoParticao) {
         long memoriaUsadaPelasParticoes = particoes.stream().mapToLong(Particao::getTamanho).sum();
         if (memoriaUsadaPelasParticoes + tamanhoParticao > this.tamanhoTotal) {
             return false;
@@ -39,8 +42,4 @@ public class Memoria {
                 .sum();
     }
 
-    public long getTamanhoTotal() { return tamanhoTotal; }
-    public List<Particao> getParticoes() { return particoes; }
-    public List<Processo> getMemoriaSecundaria() { return memoriaSecundaria; }
-    public UnidadeArmazenamento getUnidade() { return unidade; }
 }

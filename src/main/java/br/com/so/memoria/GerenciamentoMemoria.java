@@ -1,5 +1,6 @@
 package br.com.so.memoria;
 
+import br.com.so.memoria.service.AlocacaoPaginacao;
 import br.com.so.memoria.service.AlocacaoParticao;
 
 import java.util.Scanner;
@@ -12,10 +13,9 @@ public class GerenciamentoMemoria {
 
         do {
             GerenciamentoMemoria.iniciarPrograma();
-            // Validação de entrada para garantir que seja um número
             while (!scanner.hasNextInt()) {
                 System.err.println("Por favor, digite um número válido.");
-                scanner.next(); // descarta a entrada inválida
+                scanner.next();
             }
             opcao = scanner.nextInt();
 
@@ -33,9 +33,8 @@ public class GerenciamentoMemoria {
                     System.err.println("Erro, opção inválida. Tente novamente.");
                     break;
             }
-            System.out.println("\nPressione Enter para continuar...");
-            scanner.nextLine(); // Consome a nova linha
-            scanner.nextLine(); // Espera pelo Enter
+            scanner.nextLine();
+            scanner.nextLine();
 
         } while (opcao != 3);
         
@@ -43,23 +42,22 @@ public class GerenciamentoMemoria {
     }
 
     public static void iniciarPrograma() {
-        System.out.println("\n===================================");
-        System.out.println("    Gerenciamento de Memória");
-        System.out.println("===================================");
+        System.out.println("Gerenciamento de Memória\n");
         System.out.println("1. Alocação com partições fixas");
-        System.out.println("2. Alocação com paginação (Não implementado)");
+        System.out.println("2. Alocação com paginação");
         System.out.println("3. Encerrar");
         System.out.print("Escolha uma opção: ");
     }
 
     public static void alocacaoParticao() {
-        System.out.println("\n--- Alocação de memória com partições ---");
+        System.out.println("\nAlocação de memória com partições");
         AlocacaoParticao alocador = new AlocacaoParticao();
         alocador.executar();
     }
 
     public static void alocacaoPaginacao() {
-        System.out.println("\n--- Alocação de memória com paginação ---");
-        System.err.println("Funcionalidade ainda não implementada.");
+        System.out.println("\nAlocação de memória com paginação");
+        AlocacaoPaginacao paginacao = new AlocacaoPaginacao();
+        paginacao.executar();
     }
 }

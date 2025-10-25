@@ -1,5 +1,8 @@
 package br.com.so.memoria.model;
 
+import lombok.Data;
+
+@Data
 public class Processo {
     private static int proximoId = 1;
     private int id;
@@ -10,18 +13,6 @@ public class Processo {
         this.id = proximoId++;
         this.nome = nome;
         this.tamanho = tamanho;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public long getTamanho() {
-        return tamanho;
     }
 
     @Override

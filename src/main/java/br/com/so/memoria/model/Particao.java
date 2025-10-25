@@ -1,5 +1,8 @@
 package br.com.so.memoria.model;
 
+import lombok.Data;
+
+@Data
 public class Particao {
     private int id;
     private long tamanho; 
@@ -32,13 +35,6 @@ public class Particao {
         this.fragmentacaoInterna = 0;
         return processoRemovido;
     }
-    
-    // --- Getters ---
-    public int getId() { return id; }
-    public long getTamanho() { return tamanho; }
-    public long getEnderecoInicio() { return enderecoInicio; }
-    public Processo getProcessoAlocado() { return processoAlocado; }
-    public long getFragmentacaoInterna() { return fragmentacaoInterna; }
 
     @Override
     public String toString() {
